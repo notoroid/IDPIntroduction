@@ -15,10 +15,10 @@
 
 @interface IDPIntroductionViewController : UIViewController
 
-- (id) initWithBackgroundImage:(UIImage *)backgroundImage resources:(NSArray *)resources;
+- (id) initWithBackgroundImage:(UIImage *)backgroundImage pageResources:(NSArray *)pageResources;
 
 @property (strong,nonatomic) UIImage* backgroundImage; // 背景画像の指定
-@property (strong,nonatomic) NSArray *resources; // nibリソース名をページ分NArrayへ格納
+@property (strong,nonatomic) NSArray *pageResources; // nibリソース名をページ分NArrayへ格納
 @property (weak,nonatomic) id<IDPIntroductionViewControllerDelegate> delegate;
 
 @property (nonatomic,strong) IBOutlet UIView *pageContentView; // for content page loading.

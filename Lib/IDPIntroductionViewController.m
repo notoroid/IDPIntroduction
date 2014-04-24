@@ -40,6 +40,11 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
 
 @implementation IDPIntroductionViewController
 
+/**
+ *  reusable views accessor
+ *
+ *  @return NSArray instance.
+ */
 - (NSMutableArray*) reusableViews
 {
     if( _reusableViews == nil ){
@@ -70,12 +75,20 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
     return _reusableViews;
 }
 
-- (id) initWithBackgroundImage:(UIImage *)backgroundImage resources:(NSArray *)resources
+/**
+ *  initialize method
+ *
+ *  @param backgroundImage background image instance.
+ *  @param pageResources   nib name string collection.
+ *
+ *  @return instance.
+ */
+- (id) initWithBackgroundImage:(UIImage *)backgroundImage pageResources:(NSArray *)pageResources
 {
     self = [super init];
     if (self) {
         _backgroundImage = backgroundImage;
-        _resources = resources;
+        _pageResources = pageResources;
     }
     return self;
 }
@@ -84,11 +97,14 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+
     }
     return self;
 }
 
+/**
+ *  background UI construct method.
+ */
 - (void) constructBackground
 {
     if( _backgroundImage != nil ){
@@ -124,9 +140,12 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
     }
 }
 
+/**
+ *  contents construct method.
+ */
 - (void) constructContents
 {
-    if( _resources != nil ){
+    if( _pageResources != nil ){
         [_scrollView removeFromSuperview];
         _scrollView = nil;
         
@@ -147,7 +166,7 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
         [self.view addSubview:_scrollView];
         
         CGSize screenSize = [UIScreen mainScreen].bounds.size;
-        _scrollView.contentSize = CGSizeMake(screenSize.width * _resources.count , screenSize.height );
+        _scrollView.contentSize = CGSizeMake(screenSize.width * _pageResources.count , screenSize.height );
         _scrollView.contentOffset = CGPointZero;
         
         
@@ -160,7 +179,7 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
         
         _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake((CGRectGetWidth(frame) - IDP_INTRODUCTION_PAGE_CONTROL_WIDTH) * .5f /*centering*/, CGRectGetMaxY(frame) - pageControlVerticalOffset,IDP_INTRODUCTION_PAGE_CONTROL_WIDTH, IDP_INTRODUCTION_PAGE_CONTROL_HEIGHT)];
         _pageControl.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin;
-        _pageControl.numberOfPages = _resources.count;
+        _pageControl.numberOfPages = _pageResources.count;
         [self.view addSubview:_pageControl];
         
         
@@ -178,7 +197,9 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
     }
 }
 
-
+/**
+ *  code bese initialize.
+ */
 - (void) loadView
 {
     [super loadView];
@@ -193,7 +214,6 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
 }
 
 - (void) viewWillLayoutSubviews
@@ -215,7 +235,7 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
         CGSize screenSize = [UIScreen mainScreen].bounds.size;
         // バックグランドの移動長さを計算
         CGFloat backgoundHorizontalLength = _backgroundView.bounds.size.width - screenSize.width;
-        _backgroundScrollRatio = backgoundHorizontalLength / (screenSize.width * (_resources.count-1));
+        _backgroundScrollRatio = backgoundHorizontalLength / (screenSize.width * (_pageResources.count-1));
         
         [self updateContents];
     }
@@ -232,10 +252,15 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
     // Dispose of any resources that can be recreated.
 }
 
+/**
+ *  Next And Done handler.
+ *
+ *  @param sender sender
+ */
 - (void)firedNextAndDone:(id)sender
 {
     NSInteger currentPhotoIndex = [self currentIndex];
-    if( currentPhotoIndex != _resources.count - 1){
+    if( currentPhotoIndex != _pageResources.count - 1){
         CGPoint contentsOffset = CGPointMake((currentPhotoIndex + 1) * [UIScreen mainScreen].bounds.size.width, _scrollView.contentOffset.y);
         
         [_scrollView setContentOffset:contentsOffset animated:YES];
@@ -250,6 +275,11 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
     }
 }
 
+/**
+ *  current index
+ *
+ *  @return current index
+ */
 - (NSInteger) currentIndex
 {
     CGPoint contentsOffset = _forcedContentOffset != nil ? [_forcedContentOffset CGPointValue] : _scrollView.contentOffset;
@@ -257,6 +287,11 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
     return currentIndex;
 }
 
+/**
+ *  unused page method.
+ *
+ *  @param contentView content view
+ */
 - (void) unuseWithContentView:(IDPInroductionContentView *)contentView
 {
     NSArray* subViews = [NSArray arrayWithArray:contentView.subviews];
@@ -267,9 +302,15 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
     }
 }
 
+/**
+ *  update page method.
+ *
+ *  @param contentView content view
+ *  @param index       page index
+ */
 - (void) updateWithContentView:(IDPInroductionContentView *)contentView index:(NSInteger)index
 {
-    NSString *nibName = _resources[index];
+    NSString *nibName = _pageResources[index];
     
     [[UINib nibWithNibName:nibName bundle:nil] instantiateWithOwner:self options:nil];
     
@@ -285,6 +326,7 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
     [_delegate introductionViewController:self updateContentView:pageContentView index:(NSUInteger)index];
 }
 
+// update page control and button title.
 - (void) updatePageControl
 {
     NSInteger currentPhotoIndex = [self currentIndex];
@@ -292,7 +334,7 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
         _pageControl.currentPage = currentPhotoIndex;
     }
     
-    if( currentPhotoIndex != _resources.count -1 ){
+    if( currentPhotoIndex != _pageResources.count -1 ){
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
             s_titleNext = [[NSAttributedString alloc] initWithString:IDP_INTRODUCTION_LOCALIZED_NEXT_TITLE
@@ -324,11 +366,11 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
         [_buttonNextAndDone setAttributedTitle:s_titleDone forState:UIControlStateNormal];
         [_buttonNextAndDone setAttributedTitle:s_titleDoneHighlighted forState:UIControlStateHighlighted];
     }
-    
-    
-    
 }
 
+/**
+ *  content update method.
+ */
 - (void) updateContents
 {
     [self updatePageControl];
@@ -341,7 +383,7 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
     
     NSRange range = NSMakeRange(beginIndex,5);
     // 範囲を設定
-    range = (range.length + range.location) <= _resources.count ? range : NSMakeRange(beginIndex,_resources.count - range.location);
+    range = (range.length + range.location) <= _pageResources.count ? range : NSMakeRange(beginIndex,_pageResources.count - range.location);
     
     // 要素回収
     NSMutableArray* sweepViews = [NSMutableArray array];

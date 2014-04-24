@@ -38,7 +38,7 @@ UIImage* s_maskImage;
     introductionViewController.delegate = self;
     
     introductionViewController.backgroundImage = [UIImage imageWithCGImage:backgroundImage.CGImage scale:[UIScreen mainScreen].scale orientation:UIImageOrientationLeft];
-    introductionViewController.resources = @[@"InroductionContentPage",@"InroductionContentPage",@"InroductionContentPage",@"InroductionContentPage",@"InroductionContentPage"];
+    introductionViewController.pageResources = @[@"InroductionContentPage",@"InroductionContentPage",@"InroductionContentPage",@"InroductionContentPage",@"InroductionContentPage"];
     
     [self.view addSubview:introductionViewController.view];
     [self addChildViewController:introductionViewController];
