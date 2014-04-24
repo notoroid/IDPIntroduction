@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		876B4E0A1908D45C00CDB6EB /* IDPIntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 876B4E091908D45C00CDB6EB /* IDPIntroductionViewController.m */; };
+		8792F77D1908D3FA008D7674 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8792F77C1908D3FA008D7674 /* Foundation.framework */; };
+		8792F78B1908D3FA008D7674 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8792F78A1908D3FA008D7674 /* XCTest.framework */; };
+		8792F78C1908D3FA008D7674 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8792F77C1908D3FA008D7674 /* Foundation.framework */; };
+		8792F78E1908D3FA008D7674 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8792F78D1908D3FA008D7674 /* UIKit.framework */; };
+		8792F7911908D3FA008D7674 /* libIDPIntroduction.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8792F7791908D3FA008D7674 /* libIDPIntroduction.a */; };
+		8792F7971908D3FA008D7674 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8792F7951908D3FA008D7674 /* InfoPlist.strings */; };
+		8792F7991908D3FA008D7674 /* IDPIntroductionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8792F7981908D3FA008D7674 /* IDPIntroductionTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8792F78F1908D3FA008D7674 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8792F7711908D3FA008D7674 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8792F7781908D3FA008D7674;
+			remoteInfo = IDPIntroduction;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8792F7771908D3FA008D7674 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		876B4E081908D45C00CDB6EB /* IDPIntroductionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPIntroductionViewController.h; sourceTree = "<group>"; };
+		876B4E091908D45C00CDB6EB /* IDPIntroductionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPIntroductionViewController.m; sourceTree = "<group>"; };
+		8792F7791908D3FA008D7674 /* libIDPIntroduction.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIDPIntroduction.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8792F77C1908D3FA008D7674 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8792F7801908D3FA008D7674 /* IDPIntroduction-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IDPIntroduction-Prefix.pch"; sourceTree = "<group>"; };
+		8792F7891908D3FA008D7674 /* IDPIntroductionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDPIntroductionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8792F78A1908D3FA008D7674 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8792F78D1908D3FA008D7674 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		8792F7941908D3FA008D7674 /* IDPIntroductionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IDPIntroductionTests-Info.plist"; sourceTree = "<group>"; };
+		8792F7961908D3FA008D7674 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8792F7981908D3FA008D7674 /* IDPIntroductionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDPIntroductionTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8792F7761908D3FA008D7674 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8792F77D1908D3FA008D7674 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8792F7861908D3FA008D7674 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8792F78B1908D3FA008D7674 /* XCTest.framework in Frameworks */,
+				8792F7911908D3FA008D7674 /* libIDPIntroduction.a in Frameworks */,
+				8792F78E1908D3FA008D7674 /* UIKit.framework in Frameworks */,
+				8792F78C1908D3FA008D7674 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		876B4E071908D45C00CDB6EB /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				876B4E081908D45C00CDB6EB /* IDPIntroductionViewController.h */,
+				876B4E091908D45C00CDB6EB /* IDPIntroductionViewController.m */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		8792F7701908D3FA008D7674 = {
+			isa = PBXGroup;
+			children = (
+				876B4E071908D45C00CDB6EB /* Lib */,
+				8792F77E1908D3FA008D7674 /* IDPIntroduction */,
+				8792F7921908D3FA008D7674 /* IDPIntroductionTests */,
+				8792F77B1908D3FA008D7674 /* Frameworks */,
+				8792F77A1908D3FA008D7674 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8792F77A1908D3FA008D7674 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8792F7791908D3FA008D7674 /* libIDPIntroduction.a */,
+				8792F7891908D3FA008D7674 /* IDPIntroductionTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8792F77B1908D3FA008D7674 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8792F77C1908D3FA008D7674 /* Foundation.framework */,
+				8792F78A1908D3FA008D7674 /* XCTest.framework */,
+				8792F78D1908D3FA008D7674 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8792F77E1908D3FA008D7674 /* IDPIntroduction */ = {
+			isa = PBXGroup;
+			children = (
+				8792F77F1908D3FA008D7674 /* Supporting Files */,
+			);
+			path = IDPIntroduction;
+			sourceTree = "<group>";
+		};
+		8792F77F1908D3FA008D7674 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8792F7801908D3FA008D7674 /* IDPIntroduction-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8792F7921908D3FA008D7674 /* IDPIntroductionTests */ = {
+			isa = PBXGroup;
+			children = (
+				8792F7981908D3FA008D7674 /* IDPIntroductionTests.m */,
+				8792F7931908D3FA008D7674 /* Supporting Files */,
+			);
+			path = IDPIntroductionTests;
+			sourceTree = "<group>";
+		};
+		8792F7931908D3FA008D7674 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8792F7941908D3FA008D7674 /* IDPIntroductionTests-Info.plist */,
+				8792F7951908D3FA008D7674 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8792F7781908D3FA008D7674 /* IDPIntroduction */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8792F79C1908D3FA008D7674 /* Build configuration list for PBXNativeTarget "IDPIntroduction" */;
+			buildPhases = (
+				8792F7751908D3FA008D7674 /* Sources */,
+				8792F7761908D3FA008D7674 /* Frameworks */,
+				8792F7771908D3FA008D7674 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IDPIntroduction;
+			productName = IDPIntroduction;
+			productReference = 8792F7791908D3FA008D7674 /* libIDPIntroduction.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		8792F7881908D3FA008D7674 /* IDPIntroductionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8792F79F1908D3FA008D7674 /* Build configuration list for PBXNativeTarget "IDPIntroductionTests" */;
+			buildPhases = (
+				8792F7851908D3FA008D7674 /* Sources */,
+				8792F7861908D3FA008D7674 /* Frameworks */,
+				8792F7871908D3FA008D7674 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8792F7901908D3FA008D7674 /* PBXTargetDependency */,
+			);
+			name = IDPIntroductionTests;
+			productName = IDPIntroductionTests;
+			productReference = 8792F7891908D3FA008D7674 /* IDPIntroductionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8792F7711908D3FA008D7674 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Irimasu Densan Planning";
+			};
+			buildConfigurationList = 8792F7741908D3FA008D7674 /* Build configuration list for PBXProject "IDPIntroduction" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8792F7701908D3FA008D7674;
+			productRefGroup = 8792F77A1908D3FA008D7674 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8792F7781908D3FA008D7674 /* IDPIntroduction */,
+				8792F7881908D3FA008D7674 /* IDPIntroductionTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8792F7871908D3FA008D7674 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8792F7971908D3FA008D7674 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8792F7751908D3FA008D7674 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8792F7851908D3FA008D7674 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				876B4E0A1908D45C00CDB6EB /* IDPIntroductionViewController.m in Sources */,
+				8792F7991908D3FA008D7674 /* IDPIntroductionTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8792F7901908D3FA008D7674 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8792F7781908D3FA008D7674 /* IDPIntroduction */;
+			targetProxy = 8792F78F1908D3FA008D7674 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8792F7951908D3FA008D7674 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8792F7961908D3FA008D7674 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8792F79A1908D3FA008D7674 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8792F79B1908D3FA008D7674 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8792F79D1908D3FA008D7674 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/IDPIntroduction.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDPIntroduction/IDPIntroduction-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8792F79E1908D3FA008D7674 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/IDPIntroduction.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDPIntroduction/IDPIntroduction-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		8792F7A01908D3FA008D7674 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDPIntroduction/IDPIntroduction-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "IDPIntroductionTests/IDPIntroductionTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8792F7A11908D3FA008D7674 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IDPIntroduction/IDPIntroduction-Prefix.pch";
+				INFOPLIST_FILE = "IDPIntroductionTests/IDPIntroductionTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8792F7741908D3FA008D7674 /* Build configuration list for PBXProject "IDPIntroduction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8792F79A1908D3FA008D7674 /* Debug */,
+				8792F79B1908D3FA008D7674 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8792F79C1908D3FA008D7674 /* Build configuration list for PBXNativeTarget "IDPIntroduction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8792F79D1908D3FA008D7674 /* Debug */,
+				8792F79E1908D3FA008D7674 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8792F79F1908D3FA008D7674 /* Build configuration list for PBXNativeTarget "IDPIntroductionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8792F7A01908D3FA008D7674 /* Debug */,
+				8792F7A11908D3FA008D7674 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8792F7711908D3FA008D7674 /* Project object */;
+}
