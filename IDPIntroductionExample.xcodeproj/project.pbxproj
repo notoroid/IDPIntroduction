@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		871FA5C61908D7DC008E341F /* IDPIntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 871FA5C51908D7DC008E341F /* IDPIntroductionViewController.m */; };
 		876B4E181908D4A600CDB6EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876B4E171908D4A600CDB6EB /* Foundation.framework */; };
 		876B4E1A1908D4A600CDB6EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876B4E191908D4A600CDB6EB /* CoreGraphics.framework */; };
 		876B4E1C1908D4A600CDB6EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876B4E1B1908D4A600CDB6EB /* UIKit.framework */; };
@@ -36,7 +37,6 @@
 		876B4E6A1908D50F00CDB6EB /* Spider@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 876B4E5A1908D50F00CDB6EB /* Spider@2x.jpg */; };
 		876B4E6B1908D50F00CDB6EB /* squirrel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 876B4E5B1908D50F00CDB6EB /* squirrel.jpg */; };
 		876B4E6C1908D50F00CDB6EB /* squirrel@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 876B4E5C1908D50F00CDB6EB /* squirrel@2x.jpg */; };
-		876B4E721908D56C00CDB6EB /* IDPIntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 876B4E711908D56C00CDB6EB /* IDPIntroductionViewController.m */; };
 		876B4E731908D58600CDB6EB /* IntroductionLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 876B4E751908D58600CDB6EB /* IntroductionLocalizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		871FA5C41908D7DC008E341F /* IDPIntroductionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPIntroductionViewController.h; sourceTree = "<group>"; };
+		871FA5C51908D7DC008E341F /* IDPIntroductionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPIntroductionViewController.m; sourceTree = "<group>"; };
 		876B4E141908D4A600CDB6EB /* IDPIntroductionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDPIntroductionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		876B4E171908D4A600CDB6EB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		876B4E191908D4A600CDB6EB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -86,8 +88,6 @@
 		876B4E5A1908D50F00CDB6EB /* Spider@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Spider@2x.jpg"; sourceTree = "<group>"; };
 		876B4E5B1908D50F00CDB6EB /* squirrel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = squirrel.jpg; sourceTree = "<group>"; };
 		876B4E5C1908D50F00CDB6EB /* squirrel@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "squirrel@2x.jpg"; sourceTree = "<group>"; };
-		876B4E701908D56C00CDB6EB /* IDPIntroductionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPIntroductionViewController.h; sourceTree = "<group>"; };
-		876B4E711908D56C00CDB6EB /* IDPIntroductionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPIntroductionViewController.m; sourceTree = "<group>"; };
 		876B4E741908D58600CDB6EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/IntroductionLocalizable.strings; sourceTree = "<group>"; };
 		876B4E761908D59300CDB6EB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/IntroductionLocalizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,10 +116,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		871FA5C31908D7DC008E341F /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				871FA5C41908D7DC008E341F /* IDPIntroductionViewController.h */,
+				871FA5C51908D7DC008E341F /* IDPIntroductionViewController.m */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
 		876B4E0B1908D4A600CDB6EB = {
 			isa = PBXGroup;
 			children = (
-				876B4E6F1908D56C00CDB6EB /* Lib */,
+				871FA5C31908D7DC008E341F /* Lib */,
 				876B4E1D1908D4A600CDB6EB /* IDPIntroductionExample */,
 				876B4E3C1908D4A600CDB6EB /* IDPIntroductionExampleTests */,
 				876B4E161908D4A600CDB6EB /* Frameworks */,
@@ -221,16 +230,6 @@
 				876B4E571908D50F00CDB6EB /* InroductionContentPage.xib */,
 			);
 			name = IntroductionPageExampleCodes;
-			sourceTree = "<group>";
-		};
-		876B4E6F1908D56C00CDB6EB /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				876B4E701908D56C00CDB6EB /* IDPIntroductionViewController.h */,
-				876B4E711908D56C00CDB6EB /* IDPIntroductionViewController.m */,
-			);
-			name = Lib;
-			path = ../../../Desktop/IDPIntroduction/Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,7 +347,7 @@
 			files = (
 				876B4E2E1908D4A600CDB6EB /* ViewController.m in Sources */,
 				876B4E621908D50F00CDB6EB /* ContentPageBackgroundView.m in Sources */,
-				876B4E721908D56C00CDB6EB /* IDPIntroductionViewController.m in Sources */,
+				871FA5C61908D7DC008E341F /* IDPIntroductionViewController.m in Sources */,
 				876B4E281908D4A600CDB6EB /* AppDelegate.m in Sources */,
 				876B4E241908D4A600CDB6EB /* main.m in Sources */,
 			);
@@ -564,6 +563,7 @@
 				876B4E481908D4A600CDB6EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		876B4E491908D4A600CDB6EB /* Build configuration list for PBXNativeTarget "IDPIntroductionExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -572,6 +572,7 @@
 				876B4E4B1908D4A600CDB6EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
