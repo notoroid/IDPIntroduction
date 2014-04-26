@@ -127,17 +127,7 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
         [self.view sendSubviewToBack:_backgroundView];
             // 背面に移動
         
-#define IDP_INTRODUCTION_MOTION_EFFECT_VALUE 15.0f
-        UIInterpolatingMotionEffect *interpolationHorizontal = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
-        interpolationHorizontal.minimumRelativeValue = @(-IDP_INTRODUCTION_MOTION_EFFECT_VALUE);
-        interpolationHorizontal.maximumRelativeValue = @(IDP_INTRODUCTION_MOTION_EFFECT_VALUE);
-        
-        UIInterpolatingMotionEffect *interpolationVertical = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.y" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
-        interpolationVertical.minimumRelativeValue = @(-IDP_INTRODUCTION_MOTION_EFFECT_VALUE);
-        interpolationVertical.maximumRelativeValue = @(IDP_INTRODUCTION_MOTION_EFFECT_VALUE);
-        
-        [_backgroundImageView addMotionEffect:interpolationHorizontal];
-        [_backgroundImageView addMotionEffect:interpolationVertical];
+        [self registerEffectForView:_backgroundImageView depth:-16];
     }
 }
 
@@ -178,6 +168,7 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
         _viewParallaxView.opaque = NO;
         [_scrollView addSubview:_viewParallaxView];
         
+        [self registerEffectForView:_viewParallaxView depth:8];
         
 #define IDP_INTRODUCTION_PAGE_CONTROL_VERTICAL_OFFSET_3_5_INCH 45.0f
 #define IDP_INTRODUCTION_PAGE_CONTROL_VERTICAL_OFFSET_4_INCH 55.0f
@@ -205,6 +196,26 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
         [self.view addSubview:_buttonNextAndDone];
     }
 }
+
+- (void)registerEffectForView:(UIView *)aView depth:(CGFloat)depth;
+{
+	UIInterpolatingMotionEffect *effectX;
+	UIInterpolatingMotionEffect *effectY;
+    effectX = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x"
+                                                              type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+    effectY = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.y"
+                                                              type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+	
+	
+	effectX.maximumRelativeValue = @(depth);
+	effectX.minimumRelativeValue = @(-depth);
+	effectY.maximumRelativeValue = @(depth);
+	effectY.minimumRelativeValue = @(-depth);
+	
+	[aView addMotionEffect:effectX];
+	[aView addMotionEffect:effectY];
+}
+
 
 /**
  *  code bese initialize.
