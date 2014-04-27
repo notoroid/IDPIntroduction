@@ -8,6 +8,12 @@
 
 #import "IDPIntroductionViewController.h"
 
+typedef NS_ENUM(NSInteger, IDPInroductionUpdateMode )
+{
+     IDPInroductionUpdateModeEndScroll
+    ,IDPInroductionUpdateModeDragging
+};
+
 static NSAttributedString *s_titleNext = nil;
 static NSAttributedString *s_titleNextHighlighted = nil;
 static NSAttributedString *s_titleDone = nil;
@@ -258,7 +264,7 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
         CGFloat backgoundHorizontalLength = _backgroundView.bounds.size.width - screenSize.width;
         _backgroundScrollRatio = backgoundHorizontalLength / (screenSize.width * (_pageResources.count-1));
         
-        [self updateContents];
+        [self updateContentsWithUpdateMode:IDPInroductionUpdateModeEndScroll];
     }
 }
 
@@ -289,7 +295,7 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
         _forcedContentOffset = [NSValue valueWithCGPoint:contentsOffset];
         // オフセットを強制設定
         
-        [self updateContents];
+        [self updateContentsWithUpdateMode:IDPInroductionUpdateModeEndScroll];
         // コンテンツを更新
     }else{
         [_delegate introductionViewControllerDidDone:self];
@@ -307,6 +313,31 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
     NSInteger currentIndex = (NSInteger)contentsOffset.x / [UIScreen mainScreen].bounds.size.width;
     return currentIndex;
 }
+
+- (NSInteger) candidateCurrentIndex
+{
+    NSInteger currentIndex = [self currentIndex];
+    
+    CGFloat offsetX = currentIndex * [UIScreen mainScreen].bounds.size.width;
+    CGFloat deltaX = offsetX - _scrollView.contentOffset.x;
+    
+    if( abs(deltaX) / [UIScreen mainScreen].bounds.size.width > .7f ){
+        if( deltaX < 0 ){
+            currentIndex++;
+            if( currentIndex > _pageResources.count-1 ){
+                currentIndex = _pageResources.count-1;
+            }
+        }else{
+            currentIndex--;
+            if( currentIndex < 0 ){
+                currentIndex = 0;
+            }
+        }
+    }
+    
+    return currentIndex;
+}
+
 
 /**
  *  unused page method.
@@ -392,12 +423,12 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
 /**
  *  content update method.
  */
-- (void) updateContents
+- (void) updateContentsWithUpdateMode:(IDPInroductionUpdateMode)updateMode
 {
     [self updatePageControl];
     // ページ情報を更新
     
-    NSInteger currentPhotoIndex = [self currentIndex];
+    NSInteger currentPhotoIndex = updateMode == IDPInroductionUpdateModeEndScroll ? [self currentIndex] : [self candidateCurrentIndex];
     
     NSInteger beginIndex = currentPhotoIndex -2;
     beginIndex = beginIndex >= 0 ? beginIndex : 0;
@@ -479,7 +510,7 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
     _forcedContentOffset = nil;
     
     // 画像の更新
-    [self updateContents];
+    [self updateContentsWithUpdateMode:IDPInroductionUpdateModeEndScroll];
 }
 
 // スクロール管理の初期化
@@ -492,9 +523,15 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
 
 - (void)scrollViewDidScroll:(UIScrollView*)scrollView {
     if(scrollView == _scrollView ) {
-        CGPoint origin = [scrollView contentOffset];
-        [scrollView setContentOffset:CGPointMake(origin.x, 0.0)];
+        CGPoint origin = scrollView.contentOffset;
+//        [scrollView setContentOffset:CGPointMake(origin.x, 0.0)];
         
+        if (scrollView.dragging == YES ) {
+            NSLog(@"dragging: origin=%@",[NSValue valueWithCGPoint:origin]);
+            NSLog(@"updateContentsWithUpdateMode: call");
+            [self updateContentsWithUpdateMode:IDPInroductionUpdateModeDragging];
+            
+        }
         
         // 背景を移動
         CGPoint backgroundOrigin = CGPointMake(-origin.x * _backgroundScrollRatio, _backgroundView.frame.origin.y);
@@ -520,7 +557,7 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
         _forcedContentOffset = nil;
         
         // 画像の更新
-        [self updateContents];
+        [self updateContentsWithUpdateMode:IDPInroductionUpdateModeEndScroll];
     }
 }
 
