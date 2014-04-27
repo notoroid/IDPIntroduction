@@ -17,3 +17,7 @@ IDPIntroduction はiPhoneアプリを紹介するための画面を提供しま�
 
 <img src="https://raw.githubusercontent.com/notoroid/IDPIntroduction/master/ScreenShots/ss05.png" style="width: 320px; height: 568px;" alt="IDPIntroductionExample" />
 
+
+<img src="https://raw.githubusercontent.com/notoroid/IDPIntroduction/master/ScreenShots/backgroundimage.png" style="width: 640px; height: 480px;" alt="requaire background image." />
+
+
