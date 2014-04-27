@@ -24,7 +24,7 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
 {
     NSValue *_forcedContentOffset;
     UIScrollView *_scrollView;
-    UIView *_viewParallaxView;
+    UIView *_parallaxView;
     UIPageControl *_pageControl;
     UIButton *_buttonNextAndDone;
     
@@ -141,8 +141,8 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
         [_scrollView removeFromSuperview];
         _scrollView = nil;
         
-        [_viewParallaxView removeFromSuperview];
-        _viewParallaxView = nil;
+        [_parallaxView removeFromSuperview];
+        _parallaxView = nil;
         
         [_pageControl removeFromSuperview];
         _pageControl = nil;
@@ -164,12 +164,12 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
         _scrollView.contentSize = CGSizeMake(screenSize.width * _pageResources.count , screenSize.height );
         _scrollView.contentOffset = CGPointZero;
         
-        _viewParallaxView = [[UIView alloc] initWithFrame:(CGRect){CGPointZero,screenSize}];
-        _viewParallaxView.backgroundColor = [UIColor clearColor];
-        _viewParallaxView.opaque = NO;
-        [_scrollView addSubview:_viewParallaxView];
+        _parallaxView = [[UIView alloc] initWithFrame:(CGRect){CGPointZero,screenSize}];
+        _parallaxView.backgroundColor = [UIColor clearColor];
+        _parallaxView.opaque = NO;
+        [_scrollView addSubview:_parallaxView];
         
-        [self registerEffectForView:_viewParallaxView depth:8];
+        [self registerEffectForView:_parallaxView depth:8];
         
 #define IDP_INTRODUCTION_PAGE_CONTROL_VERTICAL_OFFSET_3_5_INCH 45.0f
 #define IDP_INTRODUCTION_PAGE_CONTROL_VERTICAL_OFFSET_4_INCH 55.0f
@@ -462,7 +462,7 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
             
             [self updateWithContentView:subView index:position];
             
-            [_viewParallaxView addSubview:subView];
+            [_parallaxView addSubview:subView];
             
         }
     }
