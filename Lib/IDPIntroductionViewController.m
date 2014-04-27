@@ -112,8 +112,9 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
         [_backgroundView removeFromSuperview];
         _backgroundView = nil;
         
-#define IDP_INTRODUCTION_BACKGROUND_MARGINE 10.0f
-        CGSize backgroundSize = CGSizeMake(_backgroundImage.size.width - IDP_INTRODUCTION_BACKGROUND_MARGINE * 2.0f,_backgroundImage.size.height - IDP_INTRODUCTION_BACKGROUND_MARGINE * 2.0f);
+#define IDP_INTRODUCTION_BACKGROUND_HORIZONTAL_MARGINE 10.0f
+#define IDP_INTRODUCTION_BACKGROUND_VERTICAL_MARGINE 10.0f
+        CGSize backgroundSize = CGSizeMake(_backgroundImage.size.width - IDP_INTRODUCTION_BACKGROUND_HORIZONTAL_MARGINE * 2.0f,_backgroundImage.size.height - IDP_INTRODUCTION_BACKGROUND_VERTICAL_MARGINE * 2.0f);
         
         _backgroundView = [[UIView alloc] initWithFrame:(CGRect){CGPointZero,backgroundSize}];
         UIView *parentView = self.view;
@@ -121,7 +122,7 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
         // 要素を追加
         
         _backgroundImageView = [[UIImageView alloc] initWithImage:_backgroundImage];
-        _backgroundImageView.frame = CGRectMake(-IDP_INTRODUCTION_BACKGROUND_MARGINE, -IDP_INTRODUCTION_BACKGROUND_MARGINE, _backgroundImage.size.width, _backgroundImage.size.height);
+        _backgroundImageView.frame = CGRectMake(-IDP_INTRODUCTION_BACKGROUND_HORIZONTAL_MARGINE, -IDP_INTRODUCTION_BACKGROUND_VERTICAL_MARGINE, _backgroundImage.size.width, _backgroundImage.size.height);
         [_backgroundView addSubview:_backgroundImageView];
             // 画像要素を追加
         [self.view sendSubviewToBack:_backgroundView];
