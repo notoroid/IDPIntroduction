@@ -112,7 +112,7 @@ static NSAttributedString *s_titleDoneHighlighted = nil;
         [_backgroundView removeFromSuperview];
         _backgroundView = nil;
         
-#define IDP_INTRODUCTION_BACKGROUND_HORIZONTAL_MARGINE 10.0f
+#define IDP_INTRODUCTION_BACKGROUND_HORIZONTAL_MARGINE 20.0f
 #define IDP_INTRODUCTION_BACKGROUND_VERTICAL_MARGINE 10.0f
         CGSize backgroundSize = CGSizeMake(_backgroundImage.size.width - IDP_INTRODUCTION_BACKGROUND_HORIZONTAL_MARGINE * 2.0f,_backgroundImage.size.height - IDP_INTRODUCTION_BACKGROUND_VERTICAL_MARGINE * 2.0f);
         
